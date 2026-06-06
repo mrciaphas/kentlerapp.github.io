@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kentlapp</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0e0e0e;
+      color: #f0ede8;
+      font-family: -apple-system, sans-serif;
+      height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      text-align: center;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      max-width: 320px;
+    }
+    .icon { font-size: 64px; }
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    h1 span { color: #ff5c00; }
+    p { font-size: 15px; color: #666; line-height: 1.6; }
+    .btn {
+      margin-top: 8px;
+      background: #ff5c00;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 16px 32px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      width: 100%;
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Estado: procesando -->
+    <div id="state-loading">
+      <div class="icon">⏳</div>
+      <h1>Verificando pago...</h1>
+    </div>
+
+    <!-- Estado: éxito -->
+    <div id="state-success" class="hidden">
+      <div class="icon">🎨</div>
+      <h1>¡Gracias por <span>apoyar</span>!</h1>
+      <p>Tu pago fue exitoso. Toca el botón para volver a la app y activar el modo sin anuncios.</p>
+      <a id="btn-return" class="btn" href="#">VOLVER A LA APP</a>
+    </div>
+
+    <!-- Estado: error / genérico -->
+    <div id="state-generic" class="hidden">
+      <div class="icon">🎨</div>
+      <h1>Kentlapp</h1>
+      <p>Desarrollador de apps independiente.</p>
+    </div>
+  </div>
+
+  <script>
+    const params  = new URLSearchParams(window.location.search);
+    const app     = params.get('app') || 'armural';
+    const success = params.get('success');
+
+    const loading = document.getElementById('state-loading');
+    const stateSuccess = document.getElementById('state-success');
+    const stateGeneric = document.getElementById('state-generic');
+    const btnReturn = document.getElementById('btn-return');
+
+    if (success === '1') {
+      // Construir deep link de vuelta a la app
+      btnReturn.href = `${app}://premium-success`;
+
+      // Mostrar estado éxito
+      loading.classList.add('hidden');
+      stateSuccess.classList.remove('hidden');
+
+      // Intentar redirigir automáticamente después de 1.5s
+      setTimeout(() => {
+        window.location.href = `${app}://premium-success`;
+      }, 1500);
+    } else {
+      loading.classList.add('hidden');
+      stateGeneric.classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
