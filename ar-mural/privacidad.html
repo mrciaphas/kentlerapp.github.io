@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacidad · AR Mural</title>
+  <link rel="stylesheet" href="../legal.css">
+</head>
+<body>
+<main>
+  <p class="back"><a href="../">← Kentlapp</a></p>
+  <h1>Política de privacidad de <span>AR Mural</span></h1>
+  <p class="meta">Vigente desde el 4 de noviembre de 2026 · App: AR Mural (com.kentler.armural)</p>
+
+  <div class="resumen">
+    <strong>En corto:</strong> AR Mural no tiene cuentas ni servidores propios y no guarda tus fotos fuera de tu teléfono.
+    La cámara sólo se envía a otro dispositivo cuando tú tocas <b>Transmitir</b> y alguien entra con tu código.
+    Los anuncios (Google AdMob) y los pagos (Google Play) los maneja Google con sus propias políticas.
+  </div>
+
+  <h2>1. Qué datos se usan y para qué</h2>
+
+  <h3>Cámara</h3>
+  <p>La app muestra la cámara en tu pantalla para que puedas calcar el dibujo encima. El video se procesa en tu
+     teléfono; <b>no se graba, no se guarda y no se envía más que a un par</b>. No se usa el micrófono.</p>
+
+  <h3>Imágenes que eliges</h3>
+  <p>Las imágenes que abres se filtran dentro de tu teléfono. La app guarda un historial de tus últimas imágenes
+     <b>sólo en tu dispositivo</b> (almacenamiento local de la app). Se borra si borras los datos de la app o la desinstalas.</p>
+
+  <h3>Modo espejo (Transmitir)</h3>
+  <p>Sólo funciona si tú tocas <b>Transmitir</b>. La app genera un código de sala de 6 caracteres y envía, a
+     <b>un solo</b> dispositivo que entre con ese código, imágenes de lo que ve tu cámara junto con el dibujo
+     (unas 10 por segundo, sin audio). Se detiene al tocar <b>Detener transmisión</b> o al cerrar la app.</p>
+  <ul>
+    <li>La conexión es directa entre los dos dispositivos (WebRTC) y va <b>cifrada</b>.</li>
+    <li>Para encontrar al otro dispositivo se usa el servidor público de <b>PeerJS</b> (0.peerjs.com), que ve un
+        identificador temporal de la sala y las direcciones IP necesarias para conectar.</li>
+    <li>Para atravesar algunas redes se usan servidores STUN de <b>Google</b> y, si no hay conexión directa, un servidor
+        de retransmisión (TURN de <b>Open Relay / Metered</b>). Ese servidor sólo reenvía datos cifrados y no puede ver la imagen.</li>
+    <li>Nada de la transmisión se almacena, ni por nosotros ni por la app.</li>
+  </ul>
+  <p>Cualquier persona que tenga tu código puede ver la transmisión mientras esté activa. Compártelo sólo con quien quieras.</p>
+
+  <h3>Anuncios</h3>
+  <p>La versión gratuita muestra anuncios de <b>Google AdMob</b>. Google puede recopilar el identificador de publicidad
+     de tu dispositivo, tu dirección IP, información del dispositivo, ubicación aproximada y tu interacción con los anuncios,
+     para mostrarlos, medirlos y prevenir fraude. Más información en
+     <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">cómo usa Google los datos de las apps de sus socios</a>.
+     Puedes restablecer o eliminar tu identificador de publicidad en los ajustes de Android. Si apoyas la app (premium), los anuncios se quitan.</p>
+
+  <h3>Compras (apoyo / premium)</h3>
+  <p>Los pagos los procesa <b>Google Play</b>. Nunca recibimos tus datos de tarjeta ni de pago. La app sólo consulta a
+     Google Play si tu cuenta ya compró el premium, para activarlo (también después de reinstalar). Ver la
+     <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">política de privacidad de Google</a>.</p>
+
+  <h3>Fuentes tipográficas</h3>
+  <p>La app carga sus tipos de letra desde <b>Google Fonts</b>, por lo que Google recibe tu dirección IP al abrirla.</p>
+
+  <h2>2. Lo que no hacemos</h2>
+  <ul>
+    <li>No pedimos registro ni creamos cuentas.</li>
+    <li>No tenemos servidores propios ni bases de datos con tu información.</li>
+    <li>No vendemos ni compartimos tus datos con nadie más allá de los servicios descritos arriba.</li>
+    <li>No usamos herramientas de analítica ni rastreo propias.</li>
+  </ul>
+
+  <h2>3. Permisos de Android</h2>
+  <ul>
+    <li><b>Cámara:</b> mostrar la cámara para calcar y, si tú lo activas, transmitirla.</li>
+    <li><b>Fotos / imágenes:</b> abrir la imagen que quieres dibujar.</li>
+    <li><b>Internet y estado de red:</b> anuncios, compras y modo espejo.</li>
+    <li><b>ID de publicidad:</b> anuncios de AdMob.</li>
+    <li><b>Facturación de Google Play:</b> compras del premium.</li>
+  </ul>
+  <p>Puedes quitar cualquier permiso en los ajustes de Android; la parte de la app que lo necesita dejará de funcionar.</p>
+
+  <h2>4. Categoría de edad</h2>
+  <p>AR Mural no está dirigida a menores de 13 años y no recopila a sabiendas datos de ellos.</p>
+
+  <h2>5. Tus derechos</h2>
+  <p>Como no guardamos tu información en servidores propios, puedes borrar todo lo que la app tiene sobre ti borrando
+     sus datos o desinstalándola. Para los datos que manejan Google, PeerJS o Metered, usa las herramientas de cada servicio.
+     Para ejercer tus derechos de acceso, rectificación, cancelación u oposición, o cualquier duda, escríbenos a
+     <a href="mailto:soporte.kentlapp@gmail.com">soporte.kentlapp@gmail.com</a>.</p>
+
+  <h2>6. Cambios</h2>
+  <p>Si esta política cambia, publicaremos la nueva versión en esta misma página con su fecha de vigencia.</p>
+
+  <p class="foot"><a href="terminos.html">Términos de uso</a> · <a href="../">Kentlapp</a></p>
+</main>
+</body>
+</html>
